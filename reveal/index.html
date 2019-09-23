@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+	<head>
+		<!-- meta -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- title -->
+		<title>{title}</title>
+
+		<!-- load style -->
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/{theme}.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<style>
+			.left {
+				float: left;
+				margin-left: 60px;
+			}
+			.right {
+				float: right;
+				margin-right: 60px;
+			}
+			.clear {
+				clear: both;
+			}
+			.reveal table.tic-toe {
+				border-collapse: separate !important;
+			}
+			td {
+				width: 40px;
+				height: 40px;
+				text-align: center !important;
+			}
+			td:nth-child(2) {
+				border-left: 1px solid white;
+				border-right: 1px solid white;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						{title}
+						==================
+						
+						
+						Note:
+						
+					</script>
+				</section>
+			</div>
+		</div>
+
+		<!-- load js -->
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/lib.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				
+				// save slide
+				history: true,
+				slideNumber: true,
+				touch: true,
+
+				// show katex error
+				math: {
+					notificationsEnabled: true,
+				},
+
+           menu: {
+                side: 'left', //Расположение меню
+                numbers: true, //Нумерация слайдов
+                markers: true, //Маркер посещения
+                titleSelector: 'h1, h2, h3, h4, h5, h6', //Заголовки, отображаемые в меню
+                useTextContentForMissingTitles: true, //Если заголовка нет, то подставляем первые слова слайда
+                hideMissingTitles: false, //Если заголовка нет, то скрываем слайд из меню
+                transitions: true, //Установить меню анимации
+                openButton: true, //Скрыть кнопку меню
+                keyboard: true, //Открытие меню по кнопке m
+                // themes: [{
+                //     name: 'Black',
+                //     theme: 'css/theme/black.css'
+                // }, {
+                //     name: 'White',
+                //     theme: 'css/theme/white.css'
+                // }, {
+                //     name: 'League',
+                //     theme: 'css/theme/league.css'
+                // }, {
+                //     name: 'Sky',
+                //     theme: 'css/theme/sky.css'
+                // }, {
+                //     name: 'Beige',
+                //     theme: 'css/theme/beige.css'
+                // }, {
+                //     name: 'Simple',
+                //     theme: 'css/theme/simple.css'
+                // }, {
+                //     name: 'Serif',
+                //     theme: 'css/theme/serif.css'
+                // }, {
+                //     name: 'Blood',
+                //     theme: 'css/theme/blood.css'
+                // }, {
+                //     name: 'Night',
+                //     theme: 'css/theme/night.css'
+                // }, {
+                //     name: 'Moon',
+                //     theme: 'css/theme/moon.css'
+                // }, {
+                //     name: 'Solarized',
+                //     theme: 'css/theme/solarized.css'
+                // }],
+            },
+
+				// load dependencies
+				dependencies: [
+					{
+						// tex
+						src: 'plugin/math-katex/math-katex.js', 
+						async: true,
+						callback: () => {
+							// solve problem with katex 
+							let section = document.querySelectorAll('section script');
+								section.forEach( (item, i) => {
+									section[i].innerHTML = section[i].innerHTML
+										.replace(/\\/g,'\\\\')
+										.replace(/_/g,'\\_')
+										.replace(/\{/g,'\\\{')
+										.replace(/\}/g,'\\\}');
+							});
+						},
+					}, { 
+						//markdown
+						src: 'plugin/markdown/marked.js',
+					}, { 
+						src: 'plugin/markdown/markdown.js', 
+						async: true,
+					},{ 
+						//Menu
+						src: 'plugin/menu/menu.js',
+						async: true
+					},{ 
+						//notes
+						src: 'plugin/notes/notes.js', 
+						async: true
+					}, { 
+						// highlight syntax
+						src: 'plugin/highlight/highlight.js', 
+						async: true, 
+						callback: () => {
+							let code = document.querySelectorAll('code');
+							code.forEach ( (item, i) => {
+								code[i].innerHTML = code[i].innerHTML
+									.replace(/\\{/g,'{')
+									.replace(/\\}/g,'}');
+							});
+							hljs.initHighlightingOnLoad();
+						}
+					}
+				]
+			});
+
+			//Запускаем программы только после полной загрузки
+			window.onload = () =>  {
+
+			}
+		</script>
+	</body>
+</html>
