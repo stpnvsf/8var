@@ -49,16 +49,16 @@ body {
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-weight: 600;
   line-height: 1.2;
-  letter-spacing: normal;
+  letter-spacing: 10px;
   text-transform: uppercase;
   text-shadow: none;
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 2.5em; }
+  font-size: 1.47em; }
 
 .reveal h2 {
-  font-size: 1.6em; }
+  font-size: 1.45em; }
 
 .reveal h3 {
   font-size: 1.3em; }

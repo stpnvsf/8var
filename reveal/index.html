@@ -6,11 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<!-- title -->
-		<title>{title}</title>
+		<title>Дифференциальное исчисление</title>
 
 		<!-- load style -->
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/{theme}.css">
+		<link rel="stylesheet" href="css/theme/my.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -54,16 +54,255 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+
+
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						{title}
+						Дифференциальное исчисление
 						==================
 						
 						
 						Note:
+						Дифференциальное исчисление
+					</script>
+				</section>
+				
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Предел функции
+						------------------
+						
+						
+						Note:
+						Предел функции
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						#### Определение предела функции
+						#### По Гейну
+
+						$$
+							A=\lim_{x \rightarrow a}{f(x)}
+							\Leftrightarrow \forall \{x_n \}
+							\in X, \{x_n\} \rightarrow a
+							\Rightarrow \{ f(x)_n\} \rightarrow A
+						$$
+						
+						#### По Коши
+
+						$$
+							A = \lim_{x \rightarrow x_0}{f(x)}
+							\Leftrightarrow \forall \varepsilon > 0 
+							\exists \delta = \delta (\varepsilon) > 0:
+						$$
+						$$
+							 \forall x_0 < |x - {x_0}| < \delta
+							 \Rightarrow  |f(x) - A| < \varepsilon
+						$$
+
+						#### Окрестное определение
+
+						$$
+							A = \lim_{x \rightarrow x_0}{f(x)}
+							\Leftrightarrow \forall \varepsilon > 0 
+							\forall O(A) \exists \dot{O}(x_0):
+							f(\dot{x_0}) \subset O(A)
+						$$
+
+						
+
+						Note:
+						Определение Гейну: значение А - это предел функции f(x) в точке x нулевое, если из любой последовательности X_n из X, стремящееся к точке А,
+						следует, что последовательность соответсвующих функций f(x_n) стремится к A. 
+						Определение по Коши: Значение А - это предел функции f(x) в точке x нулевое, если для любого взятого положительного числа эпсилон, 
+						найдется, отвечающее ему положительное число дельта, равное дельта от эпсилон такое, что для всех аргументов x, удовлетворяющих усолвию, модуль от разности x - x_0
+						лежит в пределах от 0 до дельта, следует, что выполняется равенство, модуль разности f(x) - A меньше эпсилон.
+						Окрестное определение: значение А - это предел функции f(x) в точке x нулевое, если для любой окрестности в точке А существует проколотая окрестночть точки x_0 такая, 
+						что образ этой окрестности лежит в окрестности точки А.
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Производная
+						------------------
+
+					
+					
+						Note:
+						Производная
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						#### Определение
+
+						$$
+							f'(x_0) = \lim_{\Delta x \rightarrow 0}
+							{\dfrac{\Delta y}{\Delta x}}=
+							\lim_{\Delta x \rightarrow 0}
+							{\dfrac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}}
+						$$
+					
+					
+						Note:
+						Производная это отношение предела приращения функции к приращению аргумента
+					</script>
+				</section>
+	
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						#### Способы записи производных
+
+						#### По Ньютону
+
+						$$
+							\dot{x}(t_0)
+						$$
+
+						### По Эйлеру
+						$$
+							D^n f(x_0)
+						$$
+
+						### По Эйлеру
+						$$
+							\dfrac{d^nf}{dx^n}(x_0)
+						$$
+
+					
+						Note:
+						Производная
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						#### Способы записи производных
+
+						### По Лагранжу
+						$$
+							f'(x) = f^{(1)}(x_0) = f^{(I)}(x_0)
+						$$
+
+						$$
+							f''(x_0), f'''(x_0), f^{(IV)}(x_0) 
+						$$
+
+
+						Note:
+						Производная
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						#### Правила дифференцирования
+
+						$$
+							(C(f(x)))' = C(f(x))'
+						$$
+						$$
+							(f(x) \pm g(x))' = (f(x))' \pm (g(x))'
+						$$
+						$$
+							(f(x) \cdot g(x))' = (f(x))'g(x) + f(x)(g(x))'
+						$$
+						$$
+							\left( \dfrac{f(x)}{g(x)} \right)' = \dfrac{(f(x))'g(x) - f(x)(g(x))'}{g(x)^2}
+						$$
+						$$
+							f(g(x))' = f'(g(x)) \cdot g'(x)
+ 						$$
+
+						 Note:
+					</script>
+				</section>
+				
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						#### Частные производные
+
+						$$
+							\dfrac {\partial f}{\partial x_k}
+							(a_1, \cdots, a_n) = 
+						$$
+						$$
+							lim_{\Delta x \rightarrow 0}{\dfrac{f(a_1),  \cdots, a_k + \Delta x, \cdots, a_n - f(a_1, \cdots, a_k, \cdots, a_n))}{\Delta x}}
+						$$
+
+						Note:
+						Частная производная - это отношение приращения функции по выбранной переменной к преращению этой переменной, при стремлении этого приращения к нулю
+
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						#### Полный дифференциал
+
+						$$
+							z = f(x_0, x_1, \cdots, x_n)
+						$$
+						$$
+							dz = f'_{x_0}(x_0, x_1, \cdots, x_n)\,dx_0 + 
+							f'_{x_1}(x_0, x_1, \cdots, x_n)\,dx_1 + 
+						$$
+						$$
+							\cdots + f'_{x_n}(x_0, x_1, \cdots, x_n)\,dx_n
+						$$
+
+						Note:
+						Частная производная - это отношение приращения функции по выбранной переменной к преращению этой переменной, при стремлении этого приращения к нулю
 						
 					</script>
 				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						#### Физический смысл производной
+
+						Если точка движется по оси $x$ и её координаты изменяются по закону $x(t)$, то мнгновенная скорость точки
+						$v(t) = x'(t)$, а ускорение $a(t)=v'(t)=x''(t)$
+
+						
+						Note:
+						Частная производная - это отношение приращения функции по выбранной переменной к преращению этой переменной, при стремлении этого приращения к нулю
+						
+					</script>
+				</section>
+	
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						#### Геометрический смысл производной
+
+						Производная в точке $x_0$ равна тангенсу угла наклона касательной к графику функции $f(x)$ в этой точке.
+						$$
+							f'(x) = \tan(\alpha), \text{где } \alpha \text{ угол наклона касательной}
+						$$
+
+						
+						Note:
+						Частная производная - это отношение приращения функции по выбранной переменной к преращению этой переменной, при стремлении этого приращения к нулю
+						
+					</script>
+				</section>
+	
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						#### Уравнение касательной
+
+					
+						$
+							y_{k} = f'(x_0)(x-x_0) + f(x_0)
+						$
+
+						
+						Note:
+						Частная производная - это отношение приращения функции по выбранной переменной к преращению этой переменной, при стремлении этого приращения к нулю
+						
+					</script>
+				</section>
+	
+
 			</div>
 		</div>
 
