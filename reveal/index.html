@@ -48,6 +48,9 @@
 				border-left: 1px solid white;
 				border-right: 1px solid white;
 			}
+			.formula{
+				margin-bottom: 10px !important;
+			}
 
 		</style>
 	</head>
@@ -151,7 +154,33 @@
 						Производная это отношение предела приращения функции к приращению аргумента
 					</script>
 				</section>
-	
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Пример:
+						------------------
+
+						$$
+							\lim_{x \rightarrow \infty} \dfrac{2x^2-3x-5}{1+x+3x^2} = \dfrac{\infty}{\infty}
+						$$
+						$$
+							\lim_{x \rightarrow \infty} 
+							\dfrac{
+								\dfrac{2x^2-3x-5}{x^2}
+							}
+							{
+								\dfrac{1+x+3x^2}{x^2}
+							} = \lim_{x \rightarrow \infty} \dfrac{\dfrac{2x^2}{x^2} - \dfrac{3x}{x^2}^{\rightarrow 0} -\dfrac{5}{x^2}^{\rightarrow 0}}{
+								\dfrac{1}{x^2}^{\rightarrow 0} + \dfrac{x}{x^2}^{\rightarrow 0} +\dfrac{3x^2}{x^2}
+							} =
+						$$
+						$$
+							\lim_{x \rightarrow \infty} \dfrac{2}{3} = \dfrac{2}{3}
+						$$
+
+						Note:
+						Примеры решения пределов
+					</script>
+				</section>
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
 						#### Способы записи производных
@@ -192,7 +221,7 @@
 
 
 						Note:
-						Производная
+						На слайде представлено 4 способа записи производных
 					</script>
 				</section>
 				<section data-markdown data-separator-notes="^Note:">
@@ -213,12 +242,53 @@
 						$$
 						$$
 							f(g(x))' = f'(g(x)) \cdot g'(x)
- 						$$
+						$$
 
-						 Note:
+						Note:
+						Константу можно вынести за производную
+						Производная суммы или разности равна сумме или разности производных
+						Производная произведения равна производной первого множителя на второй плюс производная второго на первый
+						Производная частного равна отношению разности производных числителя и знаменателя к квадрату знаменателя
+						Производная сложной функции равна производной главной функции на производную внутренней
 					</script>
 				</section>
-				
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Пример
+						------------
+
+						$$
+							y' = (3\sin(x))' = 3(\sin(x))' = 3\cos(x)
+						$$
+						$$
+							y' = (x^2+7x-e^x)' = (x^2)' + 7(x)' - (e^x)' = 2x + 7 - e^x
+						$$
+						$$
+							y' = (x\ln(x))' = (x)'\ln(x) +x(\ln(x))' = 
+							1\cdot\ln(x) +x\cdot\dfrac{1}{x}
+						$$
+						$$
+							y' = \left(\dfrac{\sin(x)}{x} \right)' = \dfrac{(\sin(x))'x - \sin(x)(x)'}
+							{x^2} = \dfrac{x\cos(x) -\sin(x)}{x^2}
+						$$
+
+						Note:
+						
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Пример
+						------------
+
+						$$
+							y' = (\cos(x^2))' = -\sin(x^2)(x^2)' = -2x\sin(x^2)
+						$$
+						
+						Note:
+						
+					</script>
+				</section>
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
 						#### Частные производные
@@ -233,7 +303,25 @@
 
 						Note:
 						Частная производная - это отношение приращения функции по выбранной переменной к преращению этой переменной, при стремлении этого приращения к нулю
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Пример
+						------------
 
+						$$
+							x(x,y) = x^2 - y^2 +2xy + 5
+						$$
+						$$
+							\dfrac{\partial z}{\partial x} = 2x+2y
+						$$
+						$$
+							\dfrac{\partial z}{\partial y} = 2x-2y
+						$$
+						
+						Note:
+						
 					</script>
 				</section>
 				<section data-markdown data-separator-notes="^Note:">
@@ -252,8 +340,30 @@
 						$$
 
 						Note:
-						Частная производная - это отношение приращения функции по выбранной переменной к преращению этой переменной, при стремлении этого приращения к нулю
+						Пример частных производных
+					</script>
+				</section>
+				
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Пример
+						------------
+
+						$$
+							z = e^{xy}
+						$$
+						$$
+							\dfrac{\partial z}{\partial x} = e^{xy}y
+						$$
+						$$
+							\dfrac{\partial z}{\partial y} = e^{xy}
+						$$
+						$$
+							dz = ye^{xy}\,dx + xe^{xy}\,dy = e^{xy}(y\,dx + x\,dy)
+						$$
 						
+						Note:
+						Полный дифференциал это сумма частных производных каждой переменной
 					</script>
 				</section>
 				<section data-markdown data-separator-notes="^Note:">
@@ -263,13 +373,46 @@
 						Если точка движется по оси $x$ и её координаты изменяются по закону $x(t)$, то мнгновенная скорость точки
 						$v(t) = x'(t)$, а ускорение $a(t)=v'(t)=x''(t)$
 
-						
+
 						Note:
-						Частная производная - это отношение приращения функции по выбранной переменной к преращению этой переменной, при стремлении этого приращения к нулю
+						Первая производная в точке есть мнгновенная скорость этой точки, в момент времени t, двигающейся по кривой x(t)
+						Вторая производная есть ускорение этой точки в момент времени t, двигающейся по кривой x(t)
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Пример:
+						-------------------
+						Дано: Материальная точка движется вдоль оси $x$ приямолинейно по закону $x(t) = 6t^2 - 48t + 17$, где $x(t)$ - расстояние от точки отчета в метрах,
+						$t$ - время в секундах, измеренной с начала движения.
+
+						Найти: скорость в момент времени $t = 9$ секундам.
+						Note:
+						Первая производная в точке есть мнгновенная скорость этой точки, в момент времени t, двигающейся по кривой x(t)
+						Вторая производная есть ускорение этой точки в момент времени t, двигающейся по кривой x(t)
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Пример:
+						-------------------
+						Решение:
+						$$
+							v(t) = x'(t) = (6t^2 - 48t + 17)' = 12t - 48
+						$$
+
+						$$
+							v(9) = 12 \cdot 9 - 49 = 60 \text{м/с}
+						$$
+						$$
+							a(t) = x''(t) = (12t - 48 )' = 12
+						$$
+						$$
+							a(9) = 12 \text{м/с}^2
+						$$
 						
 					</script>
 				</section>
-	
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
 						#### Геометрический смысл производной
@@ -279,30 +422,51 @@
 							f'(x) = \tan(\alpha), \text{где } \alpha \text{ угол наклона касательной}
 						$$
 
-						
 						Note:
-						Частная производная - это отношение приращения функции по выбранной переменной к преращению этой переменной, при стремлении этого приращения к нулю
-						
+						Производная в точке x_0 есть тангенс угла наклона касательной к функции f(x)
 					</script>
 				</section>
-	
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
 						#### Уравнение касательной
 
-					
 						$
 							y_{k} = f'(x_0)(x-x_0) + f(x_0)
 						$
 
-						
 						Note:
-						Частная производная - это отношение приращения функции по выбранной переменной к преращению этой переменной, при стремлении этого приращения к нулю
-						
+						Уравнение касательной задается производной функции в точке касания умноженную на разность переменной и точки касания плюс значение функции в точке касания
 					</script>
 				</section>
-	
-
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Пример:
+						-------------------
+						Дано: составить уравнение касательной к графику функции $y = \dfrac{1}{3}x^3 - 4x + 1$
+						в точке $x_0 = 3$
+						
+						Решение:
+						$$
+							f'(x) = x^2 - 4
+						$$
+						$$
+							f'(3) = 3^2 -4 = 5
+						$$
+						$$
+							f(3) = \dfrac{1}{3}3^3 - 4\cdot3 + 1 = 9 - 12 + 1 = -2
+						$$
+						$$
+							y_{k} = 5(x-3) - 2 = 5x - 17
+						$$
+						Note: Примеры на решения задач на уравнеия касательной
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Спасибо за внимание 
+						Note: Спасибо за внимание
+					</script>
+				</section>
 			</div>
 		</div>
 
@@ -421,6 +585,15 @@
 				]
 			});
 
+			Reveal.configure({
+				keyboard: {
+					68: function(){
+						Reveal.configure({
+							showNotes :(Reveal.getConfig().showNotes ? false:true)
+						});
+					}
+				}
+			});
 			//Запускаем программы только после полной загрузки
 			window.onload = () =>  {
 
